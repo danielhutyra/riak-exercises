@@ -1,0 +1,33 @@
+#ZAD1	
+curl -XPUT -i http://localhost:8098/buckets/s20369/keys/daniel_info -H "Content-Type: application/json" -d '{"names": {"first_name": "Daniel", "last_name": "Hutyra"}, "dogs":["Burek", "Choco"], "visits_no": 1, "sex": "Male"}'
+curl -XPUT -i http://localhost:8098/buckets/s20369/keys/tom_info -H "Content-Type: application/json" -d '{"names": {"first_name": "Tom", "last_name": "Ab"}, "dogs":["A1", "Ol", "XD"], "visits_no": 1, "sex": "Male"}'
+curl -XPUT -i http://localhost:8098/buckets/s20369/keys/peter_info -H "Content-Type: application/json" -d '{"names": {"first_name": "Peter", "last_name": "Bc"}, "dogs":["Mini"], "visits_no": 1, "sex": "Male"}'
+curl -XPUT -i http://localhost:8098/buckets/s20369/keys/bob_info -H "Content-Type: application/json" -d '{"names": {"first_name": "Bob", "last_name": "Cd"}, "dogs":["Pol", "Mol"], "visits_no": 1, "sex": "Male"}'
+curl -XPUT -i http://localhost:8098/buckets/s20369/keys/anna_info -H "Content-Type: application/json" -d '{"names": {"first_name": "Anna", "last_name": "De"}, "dogs":["Ala"], "visits_no": 1, "sex": "Female"}'
+		
+#ZAD2
+curl -i http://localhost:8098/buckets/s20369/keys/daniel_info
+
+#ZAD3
+curl -XPUT -i http://localhost:8098/buckets/s20369/keys/daniel_info -H "Content-Type: application/json" -d '{"names": {"first_name": "Daniel", "last_name": "Hutyra"}, "dogs":["Burek", "Choco"], "visits_no": 1, "sex": "Male", "age" : "25"}'
+
+#ZAD4
+curl -XPUT -i http://localhost:8098/buckets/s20369/keys/tom_info -H "Content-Type: application/json" -d '{"names": {"first_name": "Tom", "last_name": "Ab"}, "dogs":["A1", "Ol", "XD"], "visits_no": 1}'
+
+#ZAD5
+curl -XPUT -i http://localhost:8098/buckets/s20369/keys/peter_info -H "Content-Type: application/json" -d '{"names": {"first_name": "Peter", "last_name": "Bc"}, "dogs":["Mini"], "visits_no": 1, "sex": "Female"}'
+
+#ZAD6
+curl -XDELETE -i http://localhost:8098/buckets/s20369/keys/tom_info 
+
+#ZAD7
+curl -i http://localhost:8098/buckets/s20369/keys/tom_info
+
+#ZAD8
+curl -XPOST -i http://localhost:8098/buckets/s20369/keys -H "Content-Type: application/json" -d '{"names": {"first_name": "Unknown", "last_name": "Unknown1"}}'
+
+#ZAD9 (w Location: (...) z komunikatów z poprzedniego zapytania można wyczytać klucz, jaki został przypisany - u mnie wyszedł "Qt1lp9m5i73VsBVYikt9g3lmBAX")
+curl -i http://localhost:8098/buckets/s20369/keys/Qt1lp9m5i73VsBVYikt9g3lmBAX
+
+#ZAD10
+curl -XDELETE -i http://localhost:8098/buckets/s20369/keys/Qt1lp9m5i73VsBVYikt9g3lmBAX
